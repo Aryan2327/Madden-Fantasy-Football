@@ -2,16 +2,20 @@ from player import Player
 
 
 class QB(Player):
-    pass
+    def __init__(self, attributes):
+        super.__init__(attributes)
 
 
 class WR(Player):
-    pass
+    def __init__(self, attributes):
+        super.__init__(attributes)
 
 
 class TE(Player):
-    pass
+    def __init__(self, attributes):
+        super.__init__(attributes)
 
 
 class K(Player):
-    pass
+    def __init__(self, attributes):
+        super.__init__(attributes)

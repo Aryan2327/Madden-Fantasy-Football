@@ -1,6 +1,10 @@
+from collections import OrderedDict
+
+
 class Player:
     """
-    Param(attributes): Takes a dictionary of all of the player stats
+    Param(attributes): Takes an OrderedDict of all of the player's stats
     """
+
     def __init__(self, attributes):
-        pass
+        self.attributes = attributes
