@@ -1,0 +1,2 @@
+class CPUTeam:
+    pass

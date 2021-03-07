@@ -8,3 +8,9 @@ class Player:
 
     def __init__(self, attributes):
         self.attributes = attributes
+
+    """
+    Displays all specific values and stats for player in a pretty format
+    """
+    def show(self):
+        pass
