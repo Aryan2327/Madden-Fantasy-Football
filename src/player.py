@@ -1,7 +1,7 @@
 from collections import OrderedDict
 
 
-class Player:
+class Player(object):
     """
     Param(attributes): Takes an OrderedDict of all of the player's stats
     """

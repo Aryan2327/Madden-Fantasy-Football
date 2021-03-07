@@ -17,3 +17,9 @@ class Draft:
 
         self.round_counter += 1
         return []
+
+if __name__ == '__main__':
+    with open('../data/players.pkl', 'rb') as inp:
+        players = pickle.load(inp)
+    y = players[0].getOverall()
+    print(y)
