@@ -4,10 +4,10 @@ from collections import OrderedDict
 from positions import QB, WR, HB, TE, K
 
 with open('../data/Initial export/players.csv', 'r') as csv_file:
-    od = OrderedDict()
     player_list = []
     reader = csv.DictReader(csv_file)
     for row in reader:
+        od = OrderedDict()
         if row.get('position') == 'QB' or row.get('position') == 'RB' or row.get('position') == 'WR' or row.get(
                 'position') == 'TE' or row.get('position') == 'K':
             # if row.get('lastName') == 'Perriman' :
@@ -66,40 +66,30 @@ with open('../data/Initial export/players.csv', 'r') as csv_file:
             wrOVR -= (2 * int(row.get('dropOpenPassTrait')))
             teOVR -= (2 * int(row.get('dropOpenPassTrait')))
 
-            print('Name:', row.get('firstName'), row.get('lastName'))
-            print('Position:', row.get('position'))
-
-            print('Team:', row.get('team'))
             if row.get('position') == 'QB':
-                print('Overall Rating:', round(qbOVR, 1))
                 od["Overall"] = round(qbOVR, 1)
                 player = QB(od)
-            elif row.get('position') == 'HB':
-                print('Overall Rating:', round(hbOVR, 1))
+            if row.get('position') == 'HB':
                 od["Overall"] = round(hbOVR, 1)
                 player = HB(od)
-            elif row.get('position') == 'WR':
-                print('Overall Rating:', round(wrOVR, 1))
+            if row.get('position') == 'WR':
                 od["Overall"] = round(wrOVR, 1)
                 player = WR(od)
-            elif row.get('position') == 'TE':
-                print('Overall Rating:', round(teOVR, 1))
+            if row.get('position') == 'TE':
                 od["Overall"] = round(teOVR, 1)
                 player = TE(od)
-            elif row.get('position') == 'K':
-                print('Overall Rating:', round(kOVR, 1))
+            if row.get('position') == 'K':
                 od["Overall"] = round(kOVR, 1)
                 player = K(od)
-            player_list.append(player)
-
-            print('Age:', row.get('age'))
-            print('Health Rating:', row.get('injuryRating'))
             print(od)
-            print(player, '\n')
+            player_list.append(od)
+            print(player_list)
 
         else:
             continue
-#print(player_list)
+#rint(player_list)
+#for i in player_list:
+    #print(i.getOverall())
 
 with open("../data/players.pkl", "wb") as output:
     pickle.dump(player_list, output)

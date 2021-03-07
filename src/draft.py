@@ -27,5 +27,12 @@ class Draft:
         sorted(ls, key=lambda x: x.attributes.get("Overall"))
         return ls
 if __name__ == '__main__':
+<<<<<<< HEAD
     d = Draft()
     
+=======
+    with open('../data/players.pkl', 'rb') as inp:
+        players = pickle.load(inp)
+    for i in players:
+        print(i.attributes)
+>>>>>>> d2fe7d898916d6e5a9677327660c8be3c1c12073
