@@ -17,8 +17,7 @@ class Draft:
     """
     Return 2D list of players you will select from depending on the round.
     Need to make if statements for each round as they are unique.
-    Figure out how to get top ten of a certain position of players (assume players are sorted)
-    and remove them from the overall pool of players (self.players)
+    Use def getTopPlayers().
     Note: Can determine position of object via isinstance(object, class)  (returns boolean)
     Ex: if isinstance(self.players[i], QB)
     Base Structure provided (keep it)
@@ -36,6 +35,13 @@ class Draft:
             round_count += 1
 
         return all_round_pools
+
+    """
+    Get top N players from self.players (N = self.teams). Remove these players from total player pool (self.players)
+    4 different key params: 'QB', 'HB', 'WR', 'TE', 'K', 'FLEX'
+    """
+    def getTopPlayers(self, key='QB'):
+        pass
 
     """
     Performs merge sort on players' overalls.
