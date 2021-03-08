@@ -39,6 +39,7 @@ class Draft:
     """
     Get top N players from self.players (N = self.teams). Remove these players from total player pool (self.players)
     4 different key params: 'QB', 'HB', 'WR', 'TE', 'K', 'FLEX'
+    Assume list is sorted.
     """
     def getTopPlayers(self, key='QB'):
         pass
