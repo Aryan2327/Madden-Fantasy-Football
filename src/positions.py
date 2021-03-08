@@ -7,6 +7,8 @@ class QB(Player):
 
     def getOverall(self):
         return self.attributes.get("Overall")
+    def getPosition(self):
+        return self.attributes.get("Position")
 
 
 class WR(Player):
@@ -15,6 +17,8 @@ class WR(Player):
 
     def getOverall(self):
         return self.attributes.get("Overall")
+    def getPosition(self):
+        return self.attributes.get("Position")
 
 
 class HB(Player):
@@ -23,6 +27,8 @@ class HB(Player):
 
     def getOverall(self):
         return self.attributes.get("Overall")
+    def getPosition(self):
+        return self.attributes.get("Position")
 
 
 class TE(Player):
@@ -31,6 +37,8 @@ class TE(Player):
 
     def getOverall(self):
         return self.attributes.get("Overall")
+    def getPosition(self):
+        return self.attributes.get("Position")
 
 
 class K(Player):
@@ -39,3 +47,5 @@ class K(Player):
 
     def getOverall(self):
         return self.attributes.get("Overall")
+    def getPosition(self):
+        return self.attributes.get("Position")

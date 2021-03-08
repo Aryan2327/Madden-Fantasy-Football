@@ -1,5 +1,6 @@
 import pickle
 from positions import QB, HB, WR, TE, K
+import random
 
 class Draft:
     def __init__(self):
@@ -9,10 +10,7 @@ class Draft:
         with open('../data/players.pkl', 'rb') as inp:
             self.players = pickle.load(inp)
         self.sortByOvr(self.players)
-        for i in self.players:
-            print(i.attributes)
-            #if isinstance(i, QB):
-                #print(i.attributes)
+        
 
     """
     Return 2D list of players you will select from depending on the round.
@@ -28,9 +26,24 @@ class Draft:
         round_count = 1
         while round_count <= self.total_rounds:
             round_pool = []
-
-
-
+            if round_count == 1 or round_count == 9 :
+                round_pool = self.getTopPlayers('QB')
+            elif round_count == 2 or round_count == 3 or round_count == 10 :
+                round_pool = self.getTopPlayers('HB')
+            elif round_count == 4 or round_count == 5 or round_count == 11 :
+                round_pool = self.getTopPlayers('WR')
+            elif round_count == 6 or round_count == 12 :
+                round_pool = self.getTopPlayers('TE')
+            elif round_count == 7 or round_count == 13:
+                round_pool = self.getTopPlayers('FLEX')
+            elif round_count == 8 :
+                round_pool = self.getTopPlayers('K')
+            elif round_count == 10 :
+                round_pool = self.getTopPlayers('FLEX')
+            elif round_count == 14 :
+                #Add randomization of 32 Defenses
+                pass
+                
             all_round_pools.append(round_pool)
             round_count += 1
 
@@ -42,12 +55,32 @@ class Draft:
     Assume list is sorted.
     """
     def getTopPlayers(self, key='QB'):
-        pass
+        returnlist = []
+        selections = 0
+        for i in range(len(self.players)-1, -1, -1):
+            if self.players[i].getPosition() == str.upper(key) :
+                if selections < 10:
+                    selections+=1
+                    returnlist.append(self.players[i])
+                    self.players.remove(self.players[i])
+                else:
+                    break
+            if str.upper(key) == 'FLEX' :
+                if self.players[i].getPosition() == 'HB' or self.players[i].getPosition() == 'WR' or self.players[i].getPosition() == 'TE' :
+                    if selections < 10:
+                        selections+=1
+                        returnlist.append(self.players[i])
+                        self.players.remove(self.players[i])
+                    else:
+                        break
+        random.shuffle(returnlist)
+        return returnlist
 
     """
     Performs merge sort on players' overalls.
     Note: All parameters in python are passed by reference (not const)
     """
+   
     def sortByOvr(self, lst):
         if len(lst) > 1:
             mid = len(lst) // 2
@@ -80,3 +113,8 @@ class Draft:
 
 if __name__ == '__main__':
     d = Draft()
+
+    for x in d.generateRoundPools():
+        for y in x:
+            print(y.attributes)
+        print('\n')

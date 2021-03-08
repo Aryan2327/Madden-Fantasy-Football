@@ -8,7 +8,7 @@ with open('../data/Initial export/players.csv', 'r') as csv_file:
     reader = csv.DictReader(csv_file)
     for row in reader:
         od = OrderedDict()
-        if row.get('position') == 'QB' or row.get('position') == 'RB' or row.get('position') == 'WR' or row.get(
+        if row.get('position') == 'QB' or row.get('position') == 'HB' or row.get('position') == 'WR' or row.get(
                 'position') == 'TE' or row.get('position') == 'K':
             # if row.get('lastName') == 'Perriman' :
 
