@@ -82,7 +82,7 @@ with open('../data/Initial export/players.csv', 'r') as csv_file:
                 od["Overall"] = round(kOVR, 1)
                 player = K(od)
             print(od)
-            player_list.append(od)
+            player_list.append(player)
             print(player_list)
 
         else:
