@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% block title %}
+Home Page
+{% endblock %}
+{% block content %}
+<div class="topDiv">
+    <h1>Please enter the following data:</h1>
+</div>
+<form action="" method="post">
+    <div class="text-center">
+        <p>
+            <label for="username">Username</label>
+            <input type="text" name="username">
+        </p>
+        <p>
+            <label for="leaguecode">League Password</label>
+            <input type="text" name="leaguecode">
+        </p>
+        <p>
+            <label for="num_users"># of User Teams (At most 10)</label>
+            <input type="text" name="num_users">
+        </p>
+        <p>
+            <input type="submit">
+        </p>
+
+    </div>
+</form>
+{% endblock %}
