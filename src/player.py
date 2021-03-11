@@ -13,4 +13,5 @@ class Player(object):
     Displays all specific values and stats for player in a pretty format
     """
     def show(self):
-        pass
+        print("Name:", self.attributes["Name"], "\nPosition:", self.attributes["Position"], "\nTeam:", self.attributes["Team"], "\nAge:", str(self.attributes["Age"]), "\nHealth Rating:", str(self.attributes["Health Rating"]), "\nOverall:", str(self.attributes["Overall"]), "\n")
+        

@@ -59,7 +59,7 @@ class Draft:
         selections = 0
         for i in range(len(self.players)-1, -1, -1):
             if self.players[i].getPosition() == str.upper(key) :
-                if selections < 10:
+                if selections < 80:
                     selections+=1
                     returnlist.append(self.players[i])
                     self.players.remove(self.players[i])
@@ -113,8 +113,3 @@ class Draft:
 
 if __name__ == '__main__':
     d = Draft()
-
-    for x in d.generateRoundPools():
-        for y in x:
-            print(y.attributes)
-        print('\n')

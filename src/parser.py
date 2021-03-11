@@ -26,39 +26,31 @@ with open('../data/Initial export/players.csv', 'r') as csv_file:
                              .03 * float(row.get('throwOnRunRating'))) + (
                              .15 * float(row.get('throwPowerRating'))) + (
                              .05 * float(row.get('throwUnderPressureRating'))))
-            hbOVR = ((.1 * float(row.get('accelRating'))) + (.12 * float(row.get('awareRating'))) + (
-                    .11 * float(row.get('bCVRating'))) + (.01 * float(row.get('cITRating'))) + (
-                             .13 * float(row.get('carryRating'))) + (.06 * float(row.get('catchRating'))) + (
-                             .1 * float(row.get('changeOfDirectionRating'))) + (
+            hbOVR = ((.11 * float(row.get('accelRating'))) + (.12 * float(row.get('awareRating'))) + (
+                    .13 * float(row.get('bCVRating'))) + (
+                             .15 * float(row.get('carryRating'))) + (.03 * float(row.get('catchRating'))) + (
+                             .11 * float(row.get('changeOfDirectionRating'))) + (
                              .08 * float(row.get('jukeMoveRating'))) + (.01 * float(row.get('releaseRating'))) + (
-                             .01 * float(row.get('routeRunMedRating'))) + (
-                             .01 * float(row.get('routeRunShortRating'))) + (
-                             .09 * float(row.get('speedRating'))) + (.08 * float(row.get('spinMoveRating'))) + (
-                             .02 * float(row.get('stiffArmRating'))) + (.02 * float(row.get('strengthRating'))) + (
-                             .05 * float(row.get('truckRating'))))
-            wrOVR = ((.06 * float(row.get('accelRating'))) + (.1 * float(row.get('awareRating'))) + (
-                    .02 * float(row.get('bCVRating'))) + (.1 * float(row.get('cITRating'))) + (
-                             .03 * float(row.get('carryRating'))) + (.11 * float(row.get('catchRating'))) + (
-                             .08 * float(row.get('changeOfDirectionRating'))) + (
-                             .03 * float(row.get('jukeMoveRating'))) + (.04 * float(row.get('jumpRating'))) + (
-                             .08 * float(row.get('releaseRating'))) + (
-                             .05 * float(row.get('routeRunDeepRating'))) + (
-                             .05 * float(row.get('routeRunMedRating'))) + (
-                             .05 * float(row.get('routeRunShortRating'))) + (
-                             .03 * float(row.get('specCatchRating'))) + (.12 * float(row.get('speedRating'))) + (
-                             .03 * float(row.get('spinMoveRating'))) + (.02 * float(row.get('strengthRating'))))
-            teOVR = ((.03 * float(row.get('accelRating'))) + (.12 * float(row.get('awareRating'))) + (
-                    .01 * float(row.get('bCVRating'))) + (.13 * float(row.get('cITRating'))) + (
-                             .03 * float(row.get('carryRating'))) + (.12 * float(row.get('catchRating'))) + (
-                             .03 * float(row.get('changeOfDirectionRating'))) + (
-                             .01 * float(row.get('jukeMoveRating'))) + (.04 * float(row.get('jumpRating'))) + (
-                             .08 * float(row.get('releaseRating'))) + (
-                             .05 * float(row.get('routeRunDeepRating'))) + (
-                             .06 * float(row.get('routeRunMedRating'))) + (
-                             .06 * float(row.get('routeRunShortRating'))) + (
-                             .05 * float(row.get('specCatchRating'))) + (.1 * float(row.get('speedRating'))) + (
-                             .01 * float(row.get('spinMoveRating'))) + (.02 * float(row.get('strengthRating'))) + (
+                             .11 * float(row.get('speedRating'))) + (.09 * float(row.get('spinMoveRating'))) + (
+                             .04 * float(row.get('stiffArmRating'))) + (
                              .04 * float(row.get('truckRating'))))
+            wrOVR = ((.02 * float(row.get('accelRating'))) + (.1 * float(row.get('awareRating'))) + (
+                    .05 * float(row.get('bCVRating'))) + (.07 * float(row.get('cITRating'))) + (
+                             .03 * float(row.get('carryRating'))) + (.07 * float(row.get('catchRating'))) + (
+                             .06 * float(row.get('changeOfDirectionRating'))) + (
+                             .03 * float(row.get('jukeMoveRating'))) + (.04 * float(row.get('jumpRating'))) + (
+                             .07 * float(row.get('releaseRating'))) + (
+                             .07 * float(row.get('routeRunDeepRating'))) + (
+                             .07 * float(row.get('routeRunMedRating'))) + (
+                             .07 * float(row.get('routeRunShortRating'))) + (
+                             .07 * float(row.get('specCatchRating'))) + (.1 * float(row.get('speedRating'))) + (
+                             .04 * float(row.get('spinMoveRating'))) + (.04 * float(row.get('strengthRating'))))
+            teOVR = ((.03 * float(row.get('accelRating'))) + (.13 * float(row.get('awareRating'))) + (
+                    .13 * float(row.get('bCVRating'))) + (.13 * float(row.get('cITRating'))) + (.13 * float(row.get('catchRating')))  + (.05 * float(row.get('jumpRating'))) + (
+                             .03 * float(row.get('releaseRating'))) + (
+                             .05 * float(row.get('routeRunMedRating'))) + (
+                             .1 * float(row.get('routeRunShortRating'))) + (
+                             .12 * float(row.get('specCatchRating'))) + (.1 * float(row.get('speedRating'))))
             kOVR = ((.1 * float(row.get('awareRating'))) + (.45 * float(row.get('kickAccRating'))) + (
                     .45 * float(row.get('kickPowerRating'))))
             hbOVR -= (2 * int(row.get('dropOpenPassTrait')))
@@ -76,14 +68,15 @@ with open('../data/Initial export/players.csv', 'r') as csv_file:
                 od["Overall"] = round(wrOVR, 1)
                 player = WR(od)
             if row.get('position') == 'TE':
+                teOVR+=6
                 od["Overall"] = round(teOVR, 1)
                 player = TE(od)
             if row.get('position') == 'K':
                 od["Overall"] = round(kOVR, 1)
                 player = K(od)
-            print(od)
+            #print(od)
             player_list.append(player)
-            print(player_list)
+            #print(player_list)
 
         else:
             continue
