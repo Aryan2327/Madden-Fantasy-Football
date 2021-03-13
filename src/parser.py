@@ -57,7 +57,15 @@ with open('../data/Initial export/players.csv', 'r') as csv_file:
             hbOVR -= (int(row.get('dropOpenPassTrait')))
             wrOVR -= (2 * int(row.get('dropOpenPassTrait')))
             teOVR -= (2 * int(row.get('dropOpenPassTrait')))
-
+            
+            if int(row.get('age')) > 40 :
+                qbOVR-=2
+                kOVR-=2
+            if int(row.get('age')) > 35 :
+                hbOVR-=2
+                wrOVR-=2
+                teOVR-=2
+                
             if row.get('position') == 'QB':
                 od["Overall"] = round(qbOVR, 1)
                 player = QB(od)
